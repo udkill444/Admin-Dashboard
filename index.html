@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 1fr 4fr;
+            grid-template-rows: 1fr 4fr;
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: 4fr 1fr;
+            overflow-y: scroll;
+            padding: 30px;
+        }
+
+        .cards {
+
+            margin-right: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: rgb(255, 255, 255);
+            border-radius: 15px;
+            border-left: solid rgb(255, 189, 48);
+            border-width: 8px;
+            box-shadow: 6px 6px 5px #acacac;
+            height: auto;
+            padding: 30px 30px;
+        }
+
+        h2 {
+            font-family: "Roboto", sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-family: "Roboto", sans-serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+
+        }
+
+        .card p {
+            font-family: "Roboto", sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #646464;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .actions img {
+            width: 1.8rem;
+            margin: 0 10px;
+            margin-top: 20px;
+        }
+
+
+        .announcements {
+            background-color: #f0f0f0;
+            margin-left: 15px;
+            font-family: "Roboto", sans-serif;
+            font-size: 0.8rem;
+
+
+        }
+
+        .announcements p {
+            color: #646464;
+        }
+
+        .announcements li {
+            padding: 15px 0;
+            border-bottom: 1px solid #d1d1d1;
+        }
+
+        .announcements li:last-child {
+            padding: 15px 0;
+            border-bottom: none;
+        }
+
+        h5 {
+            font-family: "Roboto", sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .news {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 15px 30px;
+            box-shadow: 6px 6px 5px #acacac;
+            margin-bottom: 30px;
+        }
+
+        .trending {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 15px 30px;
+            margin-top: 10px;
+            box-shadow: 6px 6px 5px #acacac;
+        }
+
+        .trending li {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 1fr 1fr;
+            padding: 10px 0;
+        }
+
+        .trending .avatar {
+            margin: 0;
+            padding: 0;
+        }
+
+        .trending img {
+            grid-row: 1 / 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="dash">
+            <div><img src="img/view-dashboard.svg" alt="">Dashboard</div>
+        </div>
+        <div class="home">
+            <div><img src="img/home.svg" alt=""><a href="">Home</a></div>
+            <div><img src="img/account-circle-outline.svg" alt=""><a href="">Profile</a></div>
+            <div><img src="img/message-processing-outline.svg" alt=""><a href="">Messages</a></div>
+            <div><img src="img/history.svg" alt=""><a href="">History</a></div>
+            <div><img src="img/file-alert-outline.svg" alt=""><a href="">Tasks</a></div>
+            <div><img src="img/account-group.svg" alt=""><a href="">Communities</a></div>
+        </div>
+        <div class="help">
+            <div><img src="img/cog.svg" alt=""><a href="">Settings</a></div>
+            <div><img src="img/face-agent.svg" alt=""><a href="">Support</a></div>
+            <div><img src="img/vpn.svg" alt=""><a href="">Privacy</a></div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="search">
+            <img src="img/magnify.svg" alt="" class="svg">
+            <input type="search" id="site-search" name="q" />
+        </div>
+        <div class="notifications">
+            <img src="img/bell-outline.svg" alt="" class="svg">
+            <img src="img/avatar for a programmer.jpg" alt="" class="avatar">
+            <p>Danil Yatsiuk</p>
+        </div>
+        <div class="user">
+            <img src="img/avatar for a programmer.jpg" alt="">
+            <div>
+                <p>Hi there,</p>
+                <p>Danil Yatsiuk (@yatsiuk)</p>
+            </div>
+        </div>
+        <div class="hotkeys">
+            <input type="button" value="New">
+            <input type="button" value="Upload">
+            <input type="button" value="Shared">
+        </div>
+    </div>
+    <div class="main">
+        <div class="project">
+            <h2>Your Projects</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="content">
+                        <h3>Super Cool Project</h3>
+                        <p>Ipsa alias omnis iste magnam dicta dolorem incidunt itaque facilis nemo aperiam.
+                            Reprehenderit
+                            porro eos dignissimos beatae et voluptatem? Asperiores, sed praesentium! </p>
+                    </div>
+                    <div class="actions">
+                        <img src="img/star-plus-outline.svg" alt="">
+                        <img src="img/eye-plus-outline.svg" alt="">
+                        <img src="img/file-download-outline.svg" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h3>Less Cool Project</h3>
+                        <p>Risus commodo viverra maecenas accumsan lacus vel. Nunc eget lorem dolor sed viverra ipsum
+                            nunc
+                            aliquet bibendum. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. </p>
+                    </div>
+                    <div class="actions">
+                        <img src="img/star-plus-outline.svg" alt="">
+                        <img src="img/eye-plus-outline.svg" alt="">
+                        <img src="img/file-download-outline.svg" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h3>Impossible App</h3>
+                        <p>Amet purus gravida quis blandit turpis cursus. Enim facilisis gravida neque convallis a cras
+                            semper. Dapibus ultrices in iaculis nunc sed augue. </p>
+                    </div>
+                    <div class="actions">
+                        <img src="img/star-plus-outline.svg" alt="">
+                        <img src="img/eye-plus-outline.svg" alt="">
+                        <img src="img/file-download-outline.svg" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h3>Easy App</h3>
+                        <p>Turpis egestas integer eget aliquet nibh praesent tristique magna. Neque laoreet suspendisse
+                            interdum consectetur libero. Etiam erat velit scelerisque in dictum non consectetur a. Amet
+                            facilisis magna etiam tempor orci. Ipsum nunc aliquet bibendum enim facilisis gravida neque
+                            convallis a. </p>
+                    </div>
+                    <div class="actions">
+                        <img src="img/star-plus-outline.svg" alt="">
+                        <img src="img/eye-plus-outline.svg" alt="">
+                        <img src="img/file-download-outline.svg" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h3>Ad Blocker</h3>
+                        <p>Turpis egestas integer eget aliquet nibh praesent tristique magna. Neque laoreet suspendisse
+                            interdum consectetur libero. Etiam erat velit scelerisque in dictum non consectetur a. </p>
+                    </div>
+                    <div class="actions">
+                        <img src="img/star-plus-outline.svg" alt="">
+                        <img src="img/eye-plus-outline.svg" alt="">
+                        <img src="img/file-download-outline.svg" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h3>Money Maker</h3>
+                        <p>Ullamcorper morbi tincidunt ornare massa eget egestas purus. Dis parturient montes nascetur
+                            ridiculus.
+                            Euismod quis viverra nibh cras pulvinar mattis. Mattis rhoncus urna neque viverra justo nec.
+                            Morbi leo
+                            urna molestie at elementum eu. Tincidunt praesent semper feugiat nibh sed pulvinar.</p>
+                    </div>
+                    <div class="actions">
+                        <img src="img/star-plus-outline.svg" alt="">
+                        <img src="img/eye-plus-outline.svg" alt="">
+                        <img src="img/file-download-outline.svg" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h3>Money Maker</h3>
+                        <p>Ullamcorper morbi tincidunt ornare massa eget egestas purus. Dis parturient montes nascetur
+                            ridiculus.
+                            Euismod quis viverra nibh cras pulvinar mattis. Mattis rhoncus urna neque viverra justo nec.
+                            Morbi leo
+                            urna molestie at elementum eu. Tincidunt praesent semper feugiat nibh sed pulvinar.</p>
+                    </div>
+                    <div class="actions">
+                        <img src="img/star-plus-outline.svg" alt="">
+                        <img src="img/eye-plus-outline.svg" alt="">
+                        <img src="img/file-download-outline.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="announcements">
+            <h2>Announcements</h2>
+            <div class="news">
+                <ul>
+                    <li>
+                        <h5>Site Maintenance</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores voluptatum ipsa cupiditate
+                            unde </p>
+                    </li>
+                    <li>
+                        <h5>Community Share Day</h5>
+                        <p>Vel rem, ipsa officia commodi veniam excepturi, ex, molestias perspiciatis consequuntur sint
+                            error voluptatem cum facilis? Voluptas accusantium, </p>
+                    </li>
+                    <li>
+                        <h5>Updated Privacy Policy</h5>
+                        <p>Accusamus nihil dicta, quisquam, similique doloremque unde quidem quaerat a possimus eum
+                            deleniti libero,</p>
+                    </li>
+                </ul>
+            </div>
+            <h2>Trending</h2>
+            <div class="trending">
+                <ul>
+                    <li>
+                        <img src="img/avataaars.png" alt="" class="avatar">
+                        <h5>@Tegan</h5>
+                        <p>World Peace Builder</p>
+                    </li>
+                    <li>
+                        <img src="img/avataaars(3).png" alt="" class="avatar">
+                        <h5>@morgan</h5>
+                        <p>Super Cool Project</p>
+                    </li>
+                    <li>
+                        <img src="img/avataaars(1).png" alt="" class="avatar">
+                        <h5>@kendall</h5>
+                        <p>Life Changing App</p>
+                    </li>
+                    <li>
+                        <img src="img/avataaars(2).png" alt="" class="avatar">
+                        <h5>@alex</h5>
+                        <p>No Traffic Maker</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
